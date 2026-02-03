@@ -15,14 +15,7 @@ public class ConversorUnidades {
         c++;
 
         if (t == 1) {
-            System.out.println("Conversion de longitud:");
-            System.out.println("[1] Metros a Kilometros");
-            System.out.println("[2] Kilometros a Metros");
-            System.out.println("[3] Metros a Millas");
-            System.out.println("[4] Millas a Metros");
-            System.out.println("[5] Centimetros a Pulgadas");
-            System.out.println("[6] Pulgadas a Centimetros");
-            System.out.print("Opcion: ");
+            MenuLongitud();
             int o = sc.nextInt();
             System.out.print("Valor: ");
             double v = sc.nextDouble();
@@ -100,6 +93,16 @@ public class ConversorUnidades {
         System.out.println("[4] Libras a Kilogramos");
         System.out.println("[5] Gramos a Onzas");
         System.out.println("[6] Onzas a Gramos");
+        System.out.print("Opcion: ");
+    }
+    static void MenuLongitud() {
+        System.out.println("Conversion de longitud:");
+        System.out.println("[1] Metros a Kilometros");
+        System.out.println("[2] Kilometros a Metros");
+        System.out.println("[3] Metros a Millas");
+        System.out.println("[4] Millas a Metros");
+        System.out.println("[5] Centimetros a Pulgadas");
+        System.out.println("[6] Pulgadas a Centimetros");
         System.out.print("Opcion: ");
     }
 }
