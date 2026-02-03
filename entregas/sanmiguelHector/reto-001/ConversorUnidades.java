@@ -2,19 +2,19 @@ import java.util.Scanner;
 
 public class ConversorUnidades {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int c = 0;
         boolean f = true;
 
         MenuPrincipal();
-        int t = sc.nextInt();
+        int opcionElegidaPorUsuario = scanner.nextInt();
         c++;
 
-        if (t == 1) {
+        if (opcionElegidaPorUsuario == 1) {
             MenuLongitud();
-            int o = sc.nextInt();
+            int o = scanner.nextInt();
             System.out.print("Valor: ");
-            double v = sc.nextDouble();
+            double v = scanner.nextDouble();
 
             if (o == 1) {
                 System.out.println(v + " m = " + (v / 1000) + " km");
@@ -32,11 +32,11 @@ public class ConversorUnidades {
                 System.out.println("Opcion no valida");
                 f = false;
             }
-        } else if (t == 2) {
+        } else if (opcionElegidaPorUsuario == 2) {
             MenuPeso();
-            int o = sc.nextInt();
+            int o = scanner.nextInt();
             System.out.print("Valor: ");
-            double v = sc.nextDouble();
+            double v = scanner.nextDouble();
 
             if (o == 1) {
                 System.out.println(v + " kg = " + (v * 1000) + " g");
@@ -54,11 +54,11 @@ public class ConversorUnidades {
                 System.out.println("Opcion no valida");
                 f = false;
             }
-        } else if (t == 3) {
+        } else if (opcionElegidaPorUsuario == 3) {
             MenuTemperatura();
-            int o = sc.nextInt();
+            int o = scanner.nextInt();
             System.out.print("Valor: ");
-            double v = sc.nextDouble();
+            double v = scanner.nextDouble();
 
             if (o == 1) {
                 System.out.println(v + " C = " + (v * 9 / 5 + 32) + " F");
