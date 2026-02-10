@@ -6,17 +6,29 @@ public class EditorFicheros {
         Scanner scanner = new Scanner(System.in);
         MostrarMenu();
         CrearFichero();
+
+        String opcionElegidaPorUsuario = scanner.next();
+
+        switch (opcionElegidaPorUsuario){
+            case "L": 
+                DefinirLineaActiva();
+        }
+
     }
 
-    static void LineaActiva(){
-        System.out.println("Digita la línea que quieres modificar");
+    static int DefinirLineaActiva() {
+        System.out.print("Seleccione línea (1-10): ");
         Scanner scanner = new Scanner(System.in);
-        int lineaActivaEscogida = scanner.nextInt();
+        int linea = scanner.nextInt();
 
-        if (lineaActivaEscogida < 1) {
+        if (linea < 1 || linea > 10) {
             System.out.println("Línea no válida.");
+            return - 1;
+        } else {
+            int lineaActiva = linea - 1;
+            System.out.println("Línea activa establecida en: " + linea);
+            return lineaActiva;
         }
-        System.out.println("Línea activa establecida en: " + lineaActivaEscogida);
     }
 
     static void MostrarMenu() {
