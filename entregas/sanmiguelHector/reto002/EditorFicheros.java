@@ -6,9 +6,9 @@ public class EditorFicheros {
 
     static String[] fichero;
     static int lineaActiva = 0;
+    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         String opcionElegidaPorUsuario;
 
         CrearFichero();
@@ -23,11 +23,24 @@ public class EditorFicheros {
                 case "S":
                     System.out.println("Saliendo del editor...");
                     break;
+
                 case "L":
                     int nuevaLinea = DefinirLineaActiva();
                     if (nuevaLinea != -1) {
                         lineaActiva = nuevaLinea;
                     }
+                    break;
+
+                case "E":
+                    EditarLineaActiva();
+                    break;
+
+                case "B":
+                    BorrarLineaActiva();
+                    break;
+
+                case "I":
+                    IntercambiarLineas();
                     break;
             }
 
@@ -35,7 +48,6 @@ public class EditorFicheros {
     }
 
     static int DefinirLineaActiva() {
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Seleccione línea (1-10): ");
         int linea = scanner.nextInt();
 
@@ -48,6 +60,36 @@ public class EditorFicheros {
         return linea - 1;
     }
 
+    static void EditarLineaActiva() {
+        scanner.nextLine();
+        System.out.print("Nuevo contenido para la línea " + (lineaActiva + 1) + ": ");
+        fichero[lineaActiva] = scanner.nextLine();
+    }
+
+    static void BorrarLineaActiva() {
+        fichero[lineaActiva] = "";
+        System.out.println("Línea borrada.");
+    }
+
+    static void IntercambiarLineas() {
+        System.out.print("Primera línea (1-10): ");
+        int l1 = scanner.nextInt() - 1;
+
+        System.out.print("Segunda línea (1-10): ");
+        int l2 = scanner.nextInt() - 1;
+
+        if (l1 < 0 || l1 > 9 || l2 < 0 || l2 > 9) {
+            System.out.println("Líneas no válidas.");
+            return;
+        }
+
+        String temp = fichero[l1];
+        fichero[l1] = fichero[l2];
+        fichero[l2] = temp;
+
+        System.out.println("Líneas intercambiadas.");
+    }
+
     static void MostrarMenu() {
         System.out.println("--------------------------------------------------");
         System.out.println("0: | Bienvenidos al editor EDLIN");
@@ -58,10 +100,8 @@ public class EditorFicheros {
         System.out.println("5: | [I] permite intercambiar dos lineas");
         System.out.println("6: | [B] borra el contenido de la linea activa");
         System.out.println("7: | [S] sale del programa");
-        System.out.println("8: | ");
-        System.out.println("9: | ");
         System.out.println("--------------------------------------------------");
-        System.out.println("Comandos: [L]inea activa | [E]ditar | [I]ntercambiar | [B]orrar | [S]alir");
+        System.out.println("Comandos: [L] [E] [I] [B] [S]");
         System.out.println();
     }
 
@@ -76,7 +116,7 @@ public class EditorFicheros {
         System.out.println("------------------Fichero Actual------------------");
         for (int i = 0; i < fichero.length; i++) {
             String marca = (i == lineaActiva) ? "*" : " ";
-            System.out.println(i + marca + ": " + fichero[i]);
+            System.out.println((i + 1) + marca + ": " + fichero[i]);
         }
     }
 }
