@@ -1,8 +1,21 @@
 package entregas.sanmiguelHector.reto002;
 
+import java.util.Scanner;
 public class EditorFicheros {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         MostrarMenu();
+    }
+
+    static void LineaActiva(){
+        System.out.println("Digita la línea que quieres modificar");
+        Scanner scanner = new Scanner(System.in);
+        int lineaActivaEscogida = scanner.nextInt();
+
+        if (lineaActivaEscogida < 1) {
+            System.out.println("Línea no válida.");
+        }
+        System.out.println("Línea activa establecida en: " + lineaActivaEscogida);
     }
 
     static void MostrarMenu() {
