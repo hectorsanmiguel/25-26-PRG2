@@ -1,0 +1,42 @@
+package entregas.sanmiguelHector.reto003;
+
+class Buscaminas {
+
+    static final int NUMERO_DE_FILAS = 5;
+    static final int NUMERO_DE_COLUMNAS = 7;
+    static final int NUMERO_DE_MINAS_INICIALES = 5;
+
+    static char[][] tableroReal = new char[NUMERO_DE_FILAS][NUMERO_DE_COLUMNAS];
+    static char[][] tableroVisible = new char[NUMERO_DE_FILAS][NUMERO_DE_COLUMNAS];
+
+    public static void main(String[] args) {
+        crearTablero();
+        mostrarTablero();
+    }
+
+    static void crearTablero() {
+
+        for (int filas = 0; filas < NUMERO_DE_FILAS; filas++) {
+            for (int columnas = 0; columnas < NUMERO_DE_COLUMNAS; columnas++) {
+                tableroReal[filas][columnas] = ' ';
+                tableroVisible[filas][columnas] = '-';
+            }
+        }
+    }
+
+    static void mostrarTablero() {
+        System.out.print("   ");
+        for (int columna = 0; columna < NUMERO_DE_COLUMNAS; columna++) {
+            System.out.print(columna + " ");
+        }
+        System.out.println();
+
+        for (int fila = 0; fila < NUMERO_DE_FILAS; fila++) {
+            System.out.print(fila + "  ");
+            for (int columna = 0; columna < NUMERO_DE_COLUMNAS; columna++) {
+                System.out.print(tableroVisible[fila][columna] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
