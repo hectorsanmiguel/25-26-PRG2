@@ -36,7 +36,7 @@ class Buscaminas {
         for (int fila = 0; fila < NUMERO_DE_FILAS; fila++) {
             System.out.print(fila + 1 + "  ");
             for (int columna = 0; columna < NUMERO_DE_COLUMNAS; columna++) {
-                System.out.print(tableroVisible[fila][columna] + " ");
+                System.out.print(tableroReal[fila][columna] + " ");
             }
             System.out.println();
         }
