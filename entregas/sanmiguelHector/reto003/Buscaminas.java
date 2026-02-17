@@ -16,6 +16,11 @@ class Buscaminas {
         crearTablero();
         colocarMinas();
         mostrarTablero();
+        while (!elJugadorHaGanado){
+            turnoJugador();
+            mostrarTablero();
+        }
+
     }
 
     static void crearTablero() {
@@ -38,7 +43,7 @@ class Buscaminas {
         for (int fila = 0; fila < NUMERO_DE_FILAS; fila++) {
             System.out.print(fila + 1 + "  ");
             for (int columna = 0; columna < NUMERO_DE_COLUMNAS; columna++) {
-                System.out.print(tableroReal[fila][columna] + " ");
+                System.out.print(tableroVisible[fila][columna] + " ");
             }
             System.out.println();
         }
@@ -72,6 +77,10 @@ class Buscaminas {
     }
 
     static void validarEleccion(int fila, int columna){
+
+        fila--;
+        columna--;
+
         if (fila < 0 || fila >= NUMERO_DE_FILAS ||
         columna < 0 || columna >= NUMERO_DE_COLUMNAS) {
 
