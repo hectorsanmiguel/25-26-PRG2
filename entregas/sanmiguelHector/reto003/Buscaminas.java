@@ -1,4 +1,5 @@
 package entregas.sanmiguelHector.reto003;
+import java.util.Random;
 
 class Buscaminas {
 
@@ -11,6 +12,7 @@ class Buscaminas {
 
     public static void main(String[] args) {
         crearTablero();
+        colocarMinas();
         mostrarTablero();
     }
 
@@ -34,9 +36,25 @@ class Buscaminas {
         for (int fila = 0; fila < NUMERO_DE_FILAS; fila++) {
             System.out.print(fila + "  ");
             for (int columna = 0; columna < NUMERO_DE_COLUMNAS; columna++) {
-                System.out.print(tableroVisible[fila][columna] + " ");
+                System.out.print(tableroReal[fila][columna] + " ");
             }
             System.out.println();
+        }
+    }
+    static void colocarMinas() {
+
+        Random random = new Random();
+        int minasColocadas = 0;
+
+        while (minasColocadas < NUMERO_DE_MINAS_INICIALES) {
+
+            int fila = random.nextInt(NUMERO_DE_FILAS);
+            int columna = random.nextInt(NUMERO_DE_COLUMNAS);
+
+            if (tableroReal[fila][columna] != '*') {
+                tableroReal[fila][columna] = '*';
+                minasColocadas++;
+            }
         }
     }
 }
