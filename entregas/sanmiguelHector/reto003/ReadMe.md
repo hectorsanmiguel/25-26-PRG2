@@ -33,3 +33,7 @@ Mientras que no haya 3 minas descubiertas o mientras no se hayan encontrado toda
     - Se comprobará si es una casilla segura o si es una mina.
     1. En caso de ser una mina: se mostrará un * y se sumará al contador de minas encontradas.
     2. En caso de ser una casilla segura: se mostrará un . y se sumará al contador de casillas seguras.
+
+## ¿Por qué he decidido desarrollarlo por mi cuenta?
+
+Se me ha hecho difícil entender los códigos presentados porque considero que están mal propuestos y enrevesados. Crear un código yo mismo desde cero hace  que sepa qué y cómo funciona cada parte del programa.
