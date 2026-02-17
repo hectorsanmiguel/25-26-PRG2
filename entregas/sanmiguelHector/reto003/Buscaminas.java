@@ -1,11 +1,13 @@
 package entregas.sanmiguelHector.reto003;
 import java.util.Random;
+import java.util.Scanner;
 
 class Buscaminas {
 
     static final int NUMERO_DE_FILAS = 5;
     static final int NUMERO_DE_COLUMNAS = 7;
     static final int NUMERO_DE_MINAS_INICIALES = 5;
+    static Scanner scanner = new Scanner(System.in);
 
     static char[][] tableroReal = new char[NUMERO_DE_FILAS][NUMERO_DE_COLUMNAS];
     static char[][] tableroVisible = new char[NUMERO_DE_FILAS][NUMERO_DE_COLUMNAS];
@@ -41,6 +43,7 @@ class Buscaminas {
             System.out.println();
         }
     }
+
     static void colocarMinas() {
 
         Random random = new Random();
@@ -56,5 +59,33 @@ class Buscaminas {
                 minasColocadas++;
             }
         }
+    }
+
+    static void turnoJugador(){
+        System.out.print("Introduce fila: ");
+        int fila = scanner.nextInt();
+
+        System.out.print("Introduce columna: ");
+        int columna = scanner.nextInt();
+
+        validarEleccion(fila, columna);
+    }
+
+    static void validarEleccion(int fila, int columna){
+        if (fila < 0 || fila >= NUMERO_DE_FILAS ||
+        columna < 0 || columna >= NUMERO_DE_COLUMNAS) {
+
+            System.out.println("Coordenadas fuera de rango.");
+            return;
+        }
+
+        if (tableroReal[fila][columna] == '*') {
+            tableroVisible[fila][columna] = '*';
+            System.out.println("Es una mina.");
+        } else {
+            tableroVisible[fila][columna] = '.';
+            System.out.println("Casilla segura.");
+        }
+
     }
 }
