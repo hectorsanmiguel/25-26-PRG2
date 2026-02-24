@@ -7,7 +7,7 @@
 - Sistemas complejos y por qué necesitamos software
 - Los 4 pilares: abstracción, encapsulación, modularización, jerarquización
 - Evolución histórica de los lenguajes hasta POO: POO = TAD + herencia + polimorfismo
-- Conceptos básicos: clase, objeto, mensaje, método, atributo, estado / Interfaz pública vs implementación privada
+- Conceptos básicos: clase, objeto, mensaje, método, atributo, estado / Vista pública (interfaz) & vista privada (implementación)
 
 ## 10 y 13 feb
 
