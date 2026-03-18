@@ -97,9 +97,9 @@ public class Fraccion {
         return esIgualFraccion(new Fraccion(numero));
     }
 
-    public boolean equals(Fraccion fraccion){}
-
-    public String toString(){}
+    public String toString(){
+        return this.numerador + "/" + this.denominador;
+    }
 
     public void invertir(){
         assert this.numerador != 0 : "No se puede invertir una fracción con numerador 0";
