@@ -28,10 +28,28 @@ public class Fraccion {
         this.denominador = fraccion.denominador;
     }
 
-    public Fraccion clonar(){}
+    public Fraccion clonar(){
+        return new Fraccion(this);
+    }
 
-    public void sumar(Fraccion fraccion){}
-    public void restar(Fraccion fraccion){}
+    public void sumar(Fraccion fraccion){
+        assert fraccion != null : "La fracción no puede ser nula";
+
+        int nuevoNumerador = (this.numerador * fraccion.denominador)+(this.denominador * fraccion.numerador);
+        int nuevoDenominador = this.denominador * fraccion.denominador;
+
+        this.numerador = nuevoNumerador;
+        this.denominador = nuevoDenominador;
+    }
+    public void restar(Fraccion fraccion){
+        assert fraccion != null : "La fracción no puede ser nula";
+
+        fraccion.numerador *= -1;
+
+        this.sumar(fraccion);
+
+        fraccion.numerador *= 1;
+    }
     public void multiplicar(Fraccion fraccion){}
     public void dividir(Fraccion fraccion){}
 
