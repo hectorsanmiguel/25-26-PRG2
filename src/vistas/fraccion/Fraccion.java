@@ -114,4 +114,19 @@ public class Fraccion {
         this.numerador *= -1;
     }
 
+    private int calcularMCD(int numerador, int denominador) {
+        while (denominador != 0) {
+            int temporal = denominador;
+            denominador = numerador % denominador;
+            numerador = temporal;
+        }
+        return numerador;
+    }
+
+    public void simplificar(){
+        int maximoComunDivisor = calcularMCD(numerador, denominador);
+
+        this.numerador /= maximoComunDivisor;
+        this.denominador /= maximoComunDivisor;
+    }
 }
