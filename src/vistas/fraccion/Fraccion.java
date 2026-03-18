@@ -50,7 +50,15 @@ public class Fraccion {
 
         fraccion.numerador *= 1;
     }
-    public void multiplicar(Fraccion fraccion){}
+    public void multiplicar(Fraccion fraccion){
+        assert fraccion != null : "La fracción no puede ser nula";
+
+        int nuevoNumerador = this.numerador * fraccion.numerador;
+        int nuevoDenominador = this.denominador * fraccion.denominador;
+
+        this.numerador = nuevoNumerador;
+        this.denominador = nuevoDenominador;
+    }
     public void dividir(Fraccion fraccion){}
 
     public boolean esMayor(){}
