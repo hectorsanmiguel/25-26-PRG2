@@ -59,7 +59,16 @@ public class Fraccion {
         this.numerador = nuevoNumerador;
         this.denominador = nuevoDenominador;
     }
-    public void dividir(Fraccion fraccion){}
+    public void dividir(Fraccion fraccion){
+        assert fraccion != null : "La fracción no puede ser nula";
+        assert fraccion.numerador != 0: "El numerador no puede ser cero";
+
+        fraccion.invertir();
+
+        this.multiplicar(fraccion);
+
+        fraccion.invertir();
+    }
 
     public boolean esMayor(){}
     public boolean esMenor(){}
@@ -67,7 +76,15 @@ public class Fraccion {
     public boolean equals(Fraccion fraccion){}
 
     public String toString(){}
-    public void invertir(){}
+
+    public void invertir(){
+        assert this.numerador != 0 : "No se puede invertir una fracción con numerador 0";
+
+        int auxiliar = this.numerador;
+        this.numerador = this.denominador;
+        this.denominador = auxiliar;
+    }
+
     public void oponer(){}
 
 }
