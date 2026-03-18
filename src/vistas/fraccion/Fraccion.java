@@ -32,7 +32,7 @@ public class Fraccion {
         return new Fraccion(this);
     }
 
-    public void sumar(Fraccion fraccion){
+    public Fraccion sumar(Fraccion fraccion){
         assert fraccion != null : "La fracción no puede ser nula";
 
         int nuevoNumerador = (this.numerador * fraccion.denominador)+(this.denominador * fraccion.numerador);
@@ -40,8 +40,9 @@ public class Fraccion {
 
         this.numerador = nuevoNumerador;
         this.denominador = nuevoDenominador;
+        return this;
     }
-    public void restar(Fraccion fraccion){
+    public Fraccion restar(Fraccion fraccion){
         assert fraccion != null : "La fracción no puede ser nula";
 
         fraccion.oponer();
@@ -49,8 +50,10 @@ public class Fraccion {
         this.sumar(fraccion);
 
         fraccion.oponer();
+
+        return this;
     }
-    public void multiplicar(Fraccion fraccion){
+    public Fraccion multiplicar(Fraccion fraccion){
         assert fraccion != null : "La fracción no puede ser nula";
 
         int nuevoNumerador = this.numerador * fraccion.numerador;
@@ -58,6 +61,8 @@ public class Fraccion {
 
         this.numerador = nuevoNumerador;
         this.denominador = nuevoDenominador;
+
+        return this;
     }
     public Fraccion dividir(Fraccion fraccion){
         assert fraccion != null : "La fracción no puede ser nula";
@@ -104,16 +109,20 @@ public class Fraccion {
         return this.numerador + "/" + this.denominador;
     }
 
-    public void invertir(){
+    public Fraccion invertir(){
         assert this.numerador != 0 : "No se puede invertir una fracción con numerador 0";
 
         int auxiliar = this.numerador;
         this.numerador = this.denominador;
         this.denominador = auxiliar;
+
+        return this;
     }
 
-    public void oponer(){
+    public Fraccion oponer(){
         this.numerador *= -1;
+
+        return this;
     }
 
     private int calcularMCD(int numerador, int denominador) {
