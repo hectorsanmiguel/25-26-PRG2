@@ -89,6 +89,14 @@ public class Fraccion {
         return esMenorQueFraccion(new Fraccion(numero));
     }
 
+    public boolean esIgualFraccion(Fraccion fraccion){
+        return compararFracciones(fraccion) == 0;
+    }
+
+    public boolean esIgualNumero(int numero){
+        return esIgualFraccion(new Fraccion(numero));
+    }
+
     public boolean equals(Fraccion fraccion){}
 
     public String toString(){}
