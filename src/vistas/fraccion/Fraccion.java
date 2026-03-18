@@ -44,11 +44,11 @@ public class Fraccion {
     public void restar(Fraccion fraccion){
         assert fraccion != null : "La fracción no puede ser nula";
 
-        fraccion.numerador *= -1;
+        fraccion.oponer();
 
         this.sumar(fraccion);
 
-        fraccion.numerador *= 1;
+        fraccion.oponer();
     }
     public void multiplicar(Fraccion fraccion){
         assert fraccion != null : "La fracción no puede ser nula";
@@ -109,6 +109,8 @@ public class Fraccion {
         this.denominador = auxiliar;
     }
 
-    public void oponer(){}
+    public void oponer(){
+        this.numerador *= -1;
+    }
 
 }
