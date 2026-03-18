@@ -59,7 +59,7 @@ public class Fraccion {
         this.numerador = nuevoNumerador;
         this.denominador = nuevoDenominador;
     }
-    public void dividir(Fraccion fraccion){
+    public Fraccion dividir(Fraccion fraccion){
         assert fraccion != null : "La fracción no puede ser nula";
         assert fraccion.numerador != 0: "El numerador no puede ser cero";
 
@@ -68,6 +68,8 @@ public class Fraccion {
         this.multiplicar(fraccion);
 
         fraccion.invertir();
+
+        return this;
     }
 
     private int compararFracciones(Fraccion fraccion){
@@ -123,10 +125,12 @@ public class Fraccion {
         return numerador;
     }
 
-    public void simplificar(){
+    public Fraccion simplificar(){
         int maximoComunDivisor = calcularMCD(numerador, denominador);
 
         this.numerador /= maximoComunDivisor;
         this.denominador /= maximoComunDivisor;
+
+        return this;
     }
 }
