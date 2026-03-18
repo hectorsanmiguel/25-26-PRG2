@@ -97,6 +97,7 @@ public class Fraccion {
         return esIgualFraccion(new Fraccion(numero));
     }
 
+    @Override
     public String toString(){
         return this.numerador + "/" + this.denominador;
     }
