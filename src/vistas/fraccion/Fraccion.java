@@ -70,8 +70,24 @@ public class Fraccion {
         fraccion.invertir();
     }
 
-    public boolean esMayor(){}
-    public boolean esMenor(){}
+    private int compararFracciones(Fraccion fraccion){
+        return (this.numerador * fraccion.denominador) - (this.denominador * fraccion.numerador);
+    }
+
+    public boolean esMayorQueFraccion(Fraccion fraccion){
+        return compararFracciones(fraccion) > 0; 
+    }
+    public boolean esMenorQueFraccion(Fraccion fraccion){
+        return compararFracciones(fraccion) < 0; 
+    }
+
+    public boolean esMayorQueNumero(int numero) {
+        return esMayorQueFraccion(new Fraccion(numero));
+    }
+
+    public boolean esMenorQueNumero(int numero) {
+        return esMenorQueFraccion(new Fraccion(numero));
+    }
 
     public boolean equals(Fraccion fraccion){}
 
