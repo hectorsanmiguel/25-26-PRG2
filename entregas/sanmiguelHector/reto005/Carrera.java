@@ -1,14 +1,13 @@
 class Carrera {
-    private final int NUMERO_JUGADORES = 2;
+    private final int NUMERO_CABALLOS = 2;
+    private final int TAMAÑO_PISTA = 100;
     private Caballo[] caballos;
     private Pista pista;
-    private Turno turno;
 
     public Carrera() {
-        pista = new Pista(NUMERO_JUGADORES);
-        turno = new Turno();
-        caballos = new Caballo[NUMERO_JUGADORES];
-        for (int i = 0; i < NUMERO_JUGADORES; i++) {
+        pista = new Pista(NUMERO_CABALLOS, TAMAÑO_PISTA);
+        caballos = new Caballo[NUMERO_CABALLOS];
+        for (int i = 0; i < NUMERO_CABALLOS; i++) {
             caballos[i] = new Caballo(i);
             pista.meter(caballos[i]);
         }
@@ -18,11 +17,11 @@ class Carrera {
     public void jugar() {
         do {
             pista.mostrar();
-            for (int i = 0; i < NUMERO_JUGADORES; i++) {
-                pista.meter(caballos[i]);
-                turno.cambiar(i);
+            for (int i = 0; i < NUMERO_CABALLOS; i++) {
+                pista.mover(caballos[i]);
             }
 
-        } while (!pista.hayGanador());
+        } while (!pista.hayGanadores());
+        pista.mostrarEstadoFinal();
     }
 }

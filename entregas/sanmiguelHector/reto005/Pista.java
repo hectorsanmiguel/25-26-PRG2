@@ -1,6 +1,7 @@
 class Pista {
 
-    public Pista(int nUMERO_JUGADORES) {
+
+    public Pista(int NUMERO_JUGADORES, int TAMAÑO_PISTA) {
         //TODO Auto-generated constructor stub
     }
 
@@ -17,6 +18,21 @@ class Pista {
     public boolean hayGanador() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'hayGanador'");
+    }
+
+    public boolean hayGanadores() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'hayGanadores'");
+    }
+
+    public void mostrarEstadoFinal() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarEstadoFinal'");
+    }
+
+    public void mover(Caballo caballo) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mover'");
     }
     
 }
