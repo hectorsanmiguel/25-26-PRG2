@@ -1,8 +1,27 @@
 class Pista {
 
+    int[][] pista;
+    private int numeroJugadores;
+    private int tamañoPista;
 
-    public Pista(int NUMERO_JUGADORES, int TAMAÑO_PISTA) {
-        //TODO Auto-generated constructor stub
+    public Pista(int numeroJugadores, int tamañoPista) {
+
+        numeroJugadores = this.numeroJugadores;
+        tamañoPista = this.tamañoPista;
+
+        pista = new int[tamañoPista][numeroJugadores];
+        for (int i = 0; i < numeroJugadores; i++){
+            pista[0][i]= i;
+        }
+    }
+    
+    public void mostrar() {
+        for(int i = 0; i < numeroJugadores; i++){
+            for(int j = 0; j < tamañoPista; j++){
+                System.out.print(pista[i][j]);
+            }
+            System.out.println();
+        }
     }
 
     public void meter(Caballo caballo) {
@@ -10,15 +29,6 @@ class Pista {
         throw new UnsupportedOperationException("Unimplemented method 'meter'");
     }
 
-    public void mostrar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
-    }
-
-    public boolean hayGanador() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'hayGanador'");
-    }
 
     public boolean hayGanadores() {
         // TODO Auto-generated method stub
