@@ -1,7 +1,6 @@
 class Caballo {
 
-    public Caballo(int i) {
-        //TODO Auto-generated constructor stub
+    public Caballo(int dorsal) {
+        String caballo = ";-" + dorsal + "-;'";
     }
-    
 }
