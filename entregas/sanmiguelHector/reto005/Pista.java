@@ -28,7 +28,8 @@ class Pista {
                 }
             }
             System.out.println();
-        }
+
+        } System.out.println();
     }
 
     public void meter(Caballo caballo) {
@@ -36,8 +37,8 @@ class Pista {
     }
 
     public void mover(Caballo caballo) {
-        private int dorsal = caballo.getDorsal();
-        private int posicionActual = -1;
+        int dorsal = caballo.getDorsal();
+        int posicionActual = -1;
 
         for (int j = 0; j < tamañoPista; j++) {
             if (pista[dorsal][j] == dorsal) {
@@ -46,8 +47,8 @@ class Pista {
             }
         }
 
-        private double probabilidad = Math.random() * 100;
-        private int avance;
+        double probabilidad = Math.random() * 100;
+        int avance;
         if (probabilidad < 50) {
             avance = 1;
         } else if (probabilidad < 80) {
@@ -56,7 +57,7 @@ class Pista {
             avance = 4;
         }
 
-        private int nuevaPosicion = posicionActual + avance;
+        int nuevaPosicion = posicionActual + avance;
         if (nuevaPosicion >= tamañoPista) {
             nuevaPosicion = tamañoPista - 1;
         }

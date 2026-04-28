@@ -22,6 +22,7 @@ class Carrera {
             }
 
         } while (!pista.hayGanadores());
+        pista.mostrar();
         pista.mostrarEstadoFinal();
     }
 }
